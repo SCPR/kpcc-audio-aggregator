@@ -1,6 +1,6 @@
 <!-- Navbar -->
 <header class="header">
-  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <nav class="navbar navbar-default navbar-static-top navbar-fixed-top" role="navigation">
     <div class="container-fluid">
       <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
           <span class="sr-only">Toggle navigation</span>
@@ -114,11 +114,14 @@
       </ul>
     </section>
     <!-- /.sidebar -->
+  </aside>
 
-    <div class="right-side">
+  <div class="right-side">
+    <section class="content">
       {{outlet}}
-    </div>
-
+    </section>
+  </div>
+  
 </div>
 
 

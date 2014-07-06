@@ -1,1 +1,34 @@
 <h1>Index</h1>
+<div class="row">
+  {{#each this}}
+    <div class="col-md-4">
+      <!-- Default box -->
+      <div class="box">
+        <div class="box-header">
+          <h2 class="box-title">
+            {{title}}
+            <a {{bind-attr href="url"}} target="new"><i class="fa fa-external-link"></i></a>
+          </h2>
+          {{#unboundIf category}}
+          <div class="box-tools">
+            <div class="label bg-aqua">{{category}}</div>
+          </div>
+          {{/unboundIf}}
+        </div>
+        <div class="box-body">
+          <p>
+              amber, microbrewery abbey hydrometer, brewpub ale lauter tun saccharification oxidized barrel.
+              berliner weisse wort chiller adjunct hydrometer alcohol aau!
+              sour/acidic sour/acidic chocolate malt ipa ipa hydrometer.
+          </p>
+        </div><!-- /.box-body -->
+        <div class="box-footer">
+            <a href="#">
+              <i class="fa fa-play"></i>
+              <span> Play Audio</span>
+            </a>
+        </div><!-- /.box-footer-->
+      </div><!-- /.box -->
+    </div>
+  {{/each}}
+</div>
