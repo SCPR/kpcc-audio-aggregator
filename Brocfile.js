@@ -4,6 +4,9 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
 
+var mergeTrees = require('broccoli-merge-trees');
+var pickFiles = require('broccoli-static-compiler');
+
 // Use `app.import` to add additional libraries to the generated
 // output files.
 //
@@ -17,4 +20,23 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
-module.exports = app.toTree();
+// Import CSS Dependencies
+app.import('vendor/bootstrap/dist/css/bootstrap.css');
+app.import('vendor/AdminLTE-master/css/font-awesome.css');
+app.import('vendor/AdminLTE-master/css/ionicons.css');
+app.import('vendor/AdminLTE-master/css/AdminLTE.css');
+
+// Import Javascript Dependencies
+app.import('vendor/bootstrap/dist/js/bootstrap.js');
+app.import('vendor/AdminLTE-master/js/AdminLTE/app.js');
+
+// Import Other Asset Dependencies
+// Copy only the relevant files:
+var iconFonts = pickFiles('vendor/AdminLTE-master/fonts', {
+   srcDir: '/',
+   files: ['*.woff', '*.eot', '*.ttf', '*.svg'],
+   destDir: '/fonts'
+});
+
+// Merge the app tree and our new font assets.
+module.exports = mergeTrees([app.toTree(), iconFonts]);
