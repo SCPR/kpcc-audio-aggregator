@@ -1,16 +1,66 @@
+@import "../../vendor/bourbon/_bourbon.scss";
+
 html, body {
   font-family: "freight-sans-pro", sans-serif;
   margin: 0px;
 }
 
-.box-title {
-  float:none !important;
-  padding-right: 10px !important;
-  i.fa {
-    color:#ddd;
-    font-size: 0.75em;
-    &:hover {
-      color:#aaa;
+.content {
+  padding-top:60px !important;
+}
+
+$sources: KPCC, APM, BBC, CBC, KPCC, NPR, PRI;
+
+.box-header {
+  min-height: 130px;
+  position: relative;
+  cite {
+    @include hide-text();
+    display: block;
+    margin: 10px 0 0 10px;
+    width: 100px;
+    height: 20px;
+    @each $source in $sources {
+      &.#{$source} {
+        background: url('../images/logo-#{$source}.png') no-repeat 0 0;
+        background-size: contain;
+      }
     }
   }
+}
+
+  .box-tools {
+    padding:0 !important;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  .box-title {
+    color: #000;
+    float:none !important;
+    padding-right: 10px !important;
+    i.fa {
+      color: #ddd;
+      font-size: 0.75em;
+      &:hover {
+        color: #aaa;
+      }
+    }
+  }
+
+  .box-footer {
+    @include clearfix();
+    b {
+      float:right;
+    }
+  }
+
+.label {
+  border-radius: 0 !important;
+  color: #fff !important;
+  font-size: 1em;
+  font-weight: 400;
+  padding:3px 6px !important;
+  text-transform: uppercase;
 }
