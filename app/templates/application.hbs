@@ -15,66 +15,51 @@
           <img src="images/logo-KPCC.png" alt="KPCC">
           <span>Audio Aggregator</span>
         </a>
-        <div class="audio-player">
-          <audio id="player" controls="controls">
-            <source id="mp3_src" src="" type="audio/mp3" />
-            Your browser does not support the audio element.
-          </audio>
-        </div>
       </div>
 
-      <div class="wrapper row-offcanvas row-offcanvas-left">
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-      
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-              </form>
-            </li>
-            <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-user"></i>
-                    <span>Jane Doe <i class="caret"></i></span>
-                </a>
-                <ul class="dropdown-menu">
-                    <!-- User image -->
-                    <li class="user-header bg-light-blue">
-                        <p>
-                            Jane Doe - Web Developer
-                            <small>Member since Nov. 2012</small>
-                        </p>
-                    </li>
-                    <!-- Menu Body -->
-                    <li class="user-body">
-                        <div class="col-xs-4 text-center">
-                            <a href="#">Followers</a>
-                        </div>
-                        <div class="col-xs-4 text-center">
-                            <a href="#">Sales</a>
-                        </div>
-                        <div class="col-xs-4 text-center">
-                            <a href="#">Friends</a>
-                        </div>
-                    </li>
-                    <!-- Menu Footer-->
-                    <li class="user-footer">
-                        <div class="pull-left">
-                            <a href="#" class="btn btn-default btn-flat">Profile</a>
-                        </div>
-                        <div class="pull-right">
-                            <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
+      <div class="audio-player pull-left">
+        <i class="fa fa-play active"></i>
+        <i class="fa fa-pause"></i>
+        <span class="player-title">
+            <b>Now Playing:</b>
+            <span></span>
+        </span>
+        <audio id="player" controls="controls">
+          <source id="mp3_src" src="" type="audio/mp3" />
+          Your browser does not support the audio element.
+        </audio>
       </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+    
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown user user-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="glyphicon glyphicon-user"></i>
+                  <span>Jane Doe <i class="caret"></i></span>
+              </a>
+              <ul class="dropdown-menu">
+                  <!-- User image -->
+                  <li class="user-header bg-light-blue">
+                      <p>
+                          Jane Doe - Web Developer
+                          <small>Member since Nov. 2012</small>
+                      </p>
+                  </li>
+                  <!-- Menu Footer-->
+                  <li class="user-footer">
+                      <div class="pull-left">
+                          <a href="#" class="btn btn-default btn-flat">Profile</a>
+                      </div>
+                      <div class="pull-right">
+                          <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                      </div>
+                  </li>
+              </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
 
     </div>
   </nav>
@@ -125,11 +110,7 @@
     <!-- /.sidebar -->
   </aside>
 
-  <div class="right-side">
-    <section class="content">
-      {{outlet}}
-    </section>
-  </div>
+  {{outlet}}
   
 </div>
 
@@ -156,9 +137,14 @@
 
     // Hook up audio links to pass src to global <audio> element.
     // This is gross and should be reimplemented to follow Ember conventions if the app graduates from being just a prototype.   
-    $('.track').click(function(){
+    $('.track').click(function(e){
+        e.preventDefault();
+
         load_track = $(this).attr('data-audio'); //gets me the url of the new track
         change_track(load_track); // function to change the track of the loaded audio player without page refresh preferred...
+
+        var track_title = $(this).attr('data-title');
+        $('.player-title span').text(track_title);
     });
 
     function change_track(sourceUrl) {

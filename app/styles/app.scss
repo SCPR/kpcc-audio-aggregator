@@ -14,56 +14,103 @@ html, body {
   }
 }
 
-.content {
-  padding-top:60px !important;
+.audio-player {
+  @include clearfix();
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  height: 50px;
+  padding: 15px;
+  audio {
+    display: none;
+  }
+  .fa {
+    display: none;
+    float: left;
+    margin-right: 15px;
+    margin-top: 3px;
+    &.active {
+      display: inline-block;
+    }
+  }
+  .player-title {
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 480px;
+  }
 }
 
-$sources: KPCC, APM, BBC, CBC, KPCC, NPR, PRI;
+.collections {
+  background:#fff;
+  position:fixed;
+  top:129px;
+  left:0;
+  width:300px;
+}
 
-.box-header {
-  min-height: 130px;
-  position: relative;
-  cite {
-    @include hide-text();
-    display: block;
-    margin: 10px 0 0 10px;
-    width: 100px;
-    height: 20px;
-    @each $source in $sources {
-      &.#{$source} {
-        background: url('../images/logo-#{$source}.png') no-repeat 0 0;
-        background-size: contain;
+.right-side {
+  margin-left:320px !important;
+}
+
+  .content {
+    padding-top: 60px !important;
+  }
+
+.box {
+  &.dragging {
+  }
+}
+
+  $sources: KPCC, APM, BBC, CBC, KPCC, NPR, PRI;
+
+  .box-header {
+    min-height: 130px;
+    position: relative;
+    .collections & {
+      min-height:inherit;
+    }
+    cite {
+      @include hide-text();
+      display: block;
+      margin: 10px 0 0 10px;
+      width: 100px;
+      height: 20px;
+      @each $source in $sources {
+        &.#{$source} {
+          background: url('../images/logo-#{$source}.png') no-repeat 0 0;
+          background-size: contain;
+        }
       }
     }
   }
-}
 
-  .box-tools {
-    padding:0 !important;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-  }
+    .box-tools {
+      padding:0 !important;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
 
-  .box-title {
-    color: #000;
-    float:none !important;
-    padding-right: 10px !important;
-    i.fa {
-      color: #ddd;
-      font-size: 0.75em;
-      &:hover {
-        color: #aaa;
+    .box-title {
+      color: #000;
+      float:none !important;
+      padding-right: 10px !important;
+      i.fa {
+        color: #ddd;
+        font-size: 0.75em;
+        &:hover {
+          color: #aaa;
+        }
       }
     }
-  }
 
-  .box-footer {
-    @include clearfix();
-    b {
-      float:right;
+    .box-footer {
+      @include clearfix();
+      b {
+        float:right;
+      }
     }
-  }
 
 .label {
   border-radius: 0 !important;

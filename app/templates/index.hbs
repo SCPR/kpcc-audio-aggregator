@@ -1,37 +1,48 @@
-<h1>Recent Audio Stories</h1>
-<div class="row">
-  {{#each this}}
-    <div class="col-md-4">
-      <!-- Default box -->
-      <div class="box">
-        <div class="box-header">
-          <cite {{bind-attr class="source"}}>{{source}}</cite>
-          <h2 class="box-title">
-            {{title}}
-            <a {{bind-attr href="url"}} target="new"><i class="fa fa-external-link"></i></a>
-          </h2>
-          {{#unboundIf category}}
-          <div class="box-tools">
-            <div class="text-light-muted">{{category}}</div>
-          </div>
-          {{/unboundIf}}
-          {{#unboundIf program}}
-          <div class="box-tools">
-            <div class="text-light-muted">{{program}}</div>
-          </div>
-          {{/unboundIf}}
-        </div>
-        <div class="box-body">
-          <p class="timestamp">Posted {{format-date timestamp}}</p>
-        </div><!-- /.box-body -->
-        <div class="box-footer">
-            <a href="#" class="track" {{bind-attr data-audio="audio"}}>
-              <i class="fa fa-play"></i>
-              <span> Play Audio</span>
-            </a>
-            <b class="duration">{{duration}}</b>
-        </div><!-- /.box-footer-->
-      </div><!-- /.box -->
+<div class="collections">
+  <div class="box box-primary">
+    <div class="box-header">
+        <h3 class="box-title">Audio Collections</h3>
+    </div><!-- /.box-header -->
+    <div class="box-body no-padding">
+        <table class="table table-condensed">
+            <tbody><tr>
+                <th style="width: 10px">#</th>
+                <th>Title</th>
+                <th style="width: 40px">Duration</th>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>How ants play school will surprise you!</td>
+                <td><b>05:32</b></td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>How ants play school will surprise you!</td>
+                <td><b>05:32</b></td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>How ants play school will surprise you!</td>
+                <td><b>05:32</b></td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>How ants play school will surprise you!</td>
+                <td><b>05:32</b></td>
+            </tr>
+
+        </tbody></table>
+    </div><!-- /.box-body -->
+</div>
+</div>
+
+<div class="right-side">
+  <section class="content">
+    <h1>Recent Audio Stories</h1>
+    <div class="row">
+      {{#each article in controller}}
+        {{view 'article' contentBinding="article"}}
+      {{/each}}
     </div>
-  {{/each}}
+  </section>
 </div>
