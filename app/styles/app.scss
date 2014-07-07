@@ -5,6 +5,15 @@ html, body {
   margin: 0px;
 }
 
+.navbar-brand {
+  color: #000 !important;
+  margin-left:0 !important;
+  img {
+    max-width: 120px;
+    vertical-align: top;
+  }
+}
+
 .content {
   padding-top:60px !important;
 }
