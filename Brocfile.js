@@ -28,7 +28,7 @@ app.import('vendor/AdminLTE-master/css/AdminLTE.css');
 
 // Import Javascript Dependencies
 app.import('vendor/bootstrap/dist/js/bootstrap.js');
-app.import('vendor/AdminLTE-master/js/AdminLTE/app.js');
+app.import('vendor/momentjs/moment.js');
 
 // Import Other Asset Dependencies
 // Copy only the relevant files:
