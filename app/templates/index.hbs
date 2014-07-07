@@ -1,32 +1,35 @@
-<h1>Index</h1>
+<h1>Recent Audio Stories</h1>
 <div class="row">
   {{#each this}}
     <div class="col-md-4">
       <!-- Default box -->
       <div class="box">
         <div class="box-header">
+          <cite {{bind-attr class="source"}}>{{source}}</cite>
           <h2 class="box-title">
             {{title}}
             <a {{bind-attr href="url"}} target="new"><i class="fa fa-external-link"></i></a>
           </h2>
           {{#unboundIf category}}
           <div class="box-tools">
-            <div class="label bg-aqua">{{category}}</div>
+            <div class="text-light-muted">{{category}}</div>
+          </div>
+          {{/unboundIf}}
+          {{#unboundIf program}}
+          <div class="box-tools">
+            <div class="text-light-muted">{{program}}</div>
           </div>
           {{/unboundIf}}
         </div>
         <div class="box-body">
-          <p>
-              amber, microbrewery abbey hydrometer, brewpub ale lauter tun saccharification oxidized barrel.
-              berliner weisse wort chiller adjunct hydrometer alcohol aau!
-              sour/acidic sour/acidic chocolate malt ipa ipa hydrometer.
-          </p>
+          <p class="timestamp">Posted {{format-date timestamp}}</p>
         </div><!-- /.box-body -->
         <div class="box-footer">
-            <a href="#">
+            <a href="#" {{bind-attr data-audio="audio"}}>
               <i class="fa fa-play"></i>
               <span> Play Audio</span>
             </a>
+            <b class="duration">{{duration}}</b>
         </div><!-- /.box-footer-->
       </div><!-- /.box -->
     </div>
