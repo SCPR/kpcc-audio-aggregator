@@ -42,3 +42,7 @@ gem 'spring',        group: :development
 gem "active_model_serializers"
 gem "ember-rails", "~>0.14"
 gem "ember-source", "~>1.1"
+gem "bourbon"
+
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
