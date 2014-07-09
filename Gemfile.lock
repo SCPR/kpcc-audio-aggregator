@@ -134,7 +134,6 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
-  coffee-rails (~> 4.0.0)
   ember-rails (~> 0.14)
   ember-source (~> 1.1)
   jbuilder (~> 2.0)
