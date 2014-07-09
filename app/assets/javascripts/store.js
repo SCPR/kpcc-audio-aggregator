@@ -1,4 +1,4 @@
-KpccAudioAggregator.Store = DS.Store.extend({
+KpccAudioAggregator.ApplicationStore = DS.Store.extend({
 
 });
 
