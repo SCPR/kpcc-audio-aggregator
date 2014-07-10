@@ -38,11 +38,15 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-
+# Ember and Friends
 gem "active_model_serializers"
 gem "ember-rails", "~>0.14"
 gem "ember-source", "~>1.1"
-gem "bourbon"
 
+# Bourbon, bootstrap and autoprefixer - as recommended per Bootstrap
+gem "bourbon"
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+
+# JS Libraries
+gem 'momentjs-rails'

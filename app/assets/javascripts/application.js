@@ -14,9 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery
+//= require bootstrap-sprockets
 //= require handlebars
 //= require ember
 //= require ember-data
+//= require moment
 //= require_self
 //= require ./kpcc_audio_aggregator
 
