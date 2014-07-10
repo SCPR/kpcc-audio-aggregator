@@ -2,12 +2,6 @@
 <header class="header">
   <nav class="navbar navbar-default navbar-static-top navbar-fixed-top" role="navigation">
     <div class="container-fluid">
-      <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-      </a>
 
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -65,50 +59,8 @@
   </nav>
 </header>
 
-<div class="wrapper row-offcanvas row-offcanvas-left">
-  <!-- Off-Canvas Nav -->
-  <aside class="left-side sidebar-offcanvas collapse-left" id="offcanvas-nav">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-      <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
-          <div class="input-group">
-              <input type="text" name="q" class="form-control" placeholder="Search..."/>
-              <span class="input-group-btn">
-                  <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-              </span>
-          </div>
-      </form>
-      <!-- /.search form -->
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu">
-          <li class="active">
-            {{#link-to "index"}}
-                <i class="fa fa-dashboard"></i>
-                <span>Home</span>
-            {{/link-to}}
-          </li>
-          <li>
-              <a href="pages/widgets.html">
-                  <i class="fa fa-th"></i> <span>Collections</span> <small class="badge pull-right bg-green">new</small>
-              </a>
-          </li>
-          <li>
-              <a href="pages/calendar.html">
-                  <i class="fa fa-calendar"></i> <span>Calendar</span>
-                  <small class="badge pull-right bg-red">3</small>
-              </a>
-          </li>
-          <li>
-              <a href="pages/mailbox.html">
-                  <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                  <small class="badge pull-right bg-yellow">12</small>
-              </a>
-          </li>
-      </ul>
-    </section>
-    <!-- /.sidebar -->
-  </aside>
+<div class="wrapper">
+  
 
   {{outlet}}
   
@@ -117,23 +69,6 @@
 
 <script>
   $(function() {
-
-    //Enable sidebar toggle
-    $(".sidebar-toggle").click(function(e) {
-        e.preventDefault();
-
-        //If window is small enough, enable sidebar push menu
-        if ($(window).width() <= 992) {
-            $('.row-offcanvas').toggleClass('active');
-            $('.left-side').removeClass("collapse-left");
-            $(".right-side").removeClass("strech");
-            $('.row-offcanvas').toggleClass("relative");
-        } else {
-            //Else, enable content streching
-            $('.left-side').toggleClass("collapse-left");
-            $(".right-side").toggleClass("strech");
-        }
-    });
 
     // Hook up audio links to pass src to global <audio> element.
     // This is gross and should be reimplemented to follow Ember conventions if the app graduates from being just a prototype.   
