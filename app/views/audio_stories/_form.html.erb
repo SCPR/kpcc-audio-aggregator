@@ -1,0 +1,49 @@
+<%= form_for(@audio_story) do |f| %>
+  <% if @audio_story.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@audio_story.errors.count, "error") %> prohibited this audio_story from being saved:</h2>
+
+      <ul>
+      <% @audio_story.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :source %><br>
+    <%= f.text_field :source %>
+  </div>
+  <div class="field">
+    <%= f.label :program %><br>
+    <%= f.text_field :program %>
+  </div>
+  <div class="field">
+    <%= f.label :duration %><br>
+    <%= f.text_field :duration %>
+  </div>
+  <div class="field">
+    <%= f.label :audio_url %><br>
+    <%= f.text_field :audio_url %>
+  </div>
+  <div class="field">
+    <%= f.label :time_stamp %><br>
+    <%= f.datetime_select :time_stamp %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

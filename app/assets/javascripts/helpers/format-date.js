@@ -1,4 +1,5 @@
 var formatDateHelper = Ember.Handlebars.makeBoundHelper(function(timestamp) {
+  console.log(timestamp);
   var yesterday= moment().subtract('days', 1).format('L');
 
   var date = yesterday+' '+timestamp;

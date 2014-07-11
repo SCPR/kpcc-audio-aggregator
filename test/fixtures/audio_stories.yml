@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: MyString
+  title: MyString
+  url: MyString
+  source: MyString
+  program: MyString
+  duration: MyString
+  audio_url: MyString
+  time_stamp: 2014-07-11 15:04:03
+
+two:
+  category: MyString
+  title: MyString
+  url: MyString
+  source: MyString
+  program: MyString
+  duration: MyString
+  audio_url: MyString
+  time_stamp: 2014-07-11 15:04:03
