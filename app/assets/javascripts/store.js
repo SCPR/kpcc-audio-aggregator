@@ -7,3 +7,7 @@ KpccAudioAggregator.ApplicationStore = DS.Store.extend({
 KpccAudioAggregator.ApplicationAdapter = DS.ActiveModelAdapter.extend({
 
 });
+
+KpccAudioAggregator.ApplicationSerializer = DS.ActiveModelSerializer.extend({
+
+});
