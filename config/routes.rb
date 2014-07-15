@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     end
   end
 
-  # resources :audio_stories
+  resources :audio_stories
 
   root to: 'assets#index'
   get 'assets/index'
