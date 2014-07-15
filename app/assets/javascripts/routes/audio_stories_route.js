@@ -1,5 +1,5 @@
 KpccAudioAggregator.AudioStoriesRoute = Ember.Route.extend({
   model: function() {
-    return KpccAudioAggregator.AudioStory.FIXTURES;
+    return this.store.find('audio_story');
   }
 });

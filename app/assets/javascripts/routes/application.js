@@ -1,7 +1,10 @@
-//import Ember from 'ember';
+// Override the default adapter with the `DS.ActiveModelAdapter` which
+// is built to work nicely with the ActiveModel::Serializers gem.
+DS.ActiveModelAdapter.reopen({
+  namespace: 'api/v1'
+});
 
-KpccAudioAggregator.ApplicationRoute = Ember.Route.extend({
-  model: function() {
-    return KpccAudioAggregator.AudioStory.FIXTURES;
-  }
+KpccAudioAggregator.ApplicationStore = DS.Store.extend({
+
+  adapter: '-active-model'
 });

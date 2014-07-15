@@ -1,10 +1,5 @@
 // for more details see: http://emberjs.com/guides/models/defining-models/
 
-DS.ActiveModelAdapter.reopen({
-  namespace: 'api/v1'
-});
-
-
 KpccAudioAggregator.AudioStory = DS.Model.extend({
   category: DS.attr('string'),
   title: DS.attr('string'),
