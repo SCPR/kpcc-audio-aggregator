@@ -5,10 +5,11 @@
 
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-          <div class="logo-KPCC"></div>
-          <span>Audio Aggregator</span>
-        </a>
+        {{#link-to 'index' class="navbar-brand"}}
+            <div class="logo-KPCC"></div>
+            <span>Audio Aggregator</span>
+        {{/link-to}}
+        
       </div>
 
       <div class="audio-player pull-left">
