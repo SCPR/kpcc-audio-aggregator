@@ -50,3 +50,6 @@ gem 'autoprefixer-rails'
 
 # JS Libraries
 gem 'momentjs-rails'
+
+# Makes http fun again!
+gem 'httparty'
