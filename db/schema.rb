@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711220403) do
+ActiveRecord::Schema.define(version: 20140717231732) do
 
   create_table "audio_stories", force: true do |t|
     t.string   "category"
@@ -19,11 +19,12 @@ ActiveRecord::Schema.define(version: 20140711220403) do
     t.string   "url"
     t.string   "source"
     t.string   "program"
-    t.string   "duration"
+    t.integer  "duration",   limit: 255
     t.string   "audio_url"
     t.datetime "time_stamp"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "article_id"
   end
 
 end
