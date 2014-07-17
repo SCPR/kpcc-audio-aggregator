@@ -1,4 +1,4 @@
-module KpccEpisodesApiHelper
+module KpccApiHelper
 
   class Episodes
     include HTTParty
