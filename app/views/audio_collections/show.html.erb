@@ -10,5 +10,16 @@
   <%= @audio_collection.status %>
 </p>
 
+<p>
+  <strong>Audio Stories:</strong>
+  <ul>
+  <% @audio_collection.audio_stories.each do |audio_story| %>
+    <li><%= link_to audio_story.title, audio_story_path(audio_story) %></li>
+  <% end %>
+  </ul>
+</p>
+
+
+
 <%= link_to 'Edit', edit_audio_collection_path(@audio_collection) %> |
 <%= link_to 'Back', audio_collections_path %>

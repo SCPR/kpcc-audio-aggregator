@@ -5,6 +5,7 @@
     <tr>
       <th>Title</th>
       <th>Status</th>
+      <th>Audio Stories</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +15,13 @@
       <tr>
         <td><%= audio_collection.title %></td>
         <td><%= audio_collection.status %></td>
+        <td>
+          <ul>
+          <% audio_collection.audio_stories.each do |audio_story| %>
+            <li><%= link_to audio_story.title, audio_story_path(audio_story) %></li>
+          <% end %>
+          </ul>
+        </td>
         <td><%= link_to 'Show', audio_collection %></td>
         <td><%= link_to 'Edit', edit_audio_collection_path(audio_collection) %></td>
         <td><%= link_to 'Destroy', audio_collection, method: :delete, data: { confirm: 'Are you sure?' } %></td>

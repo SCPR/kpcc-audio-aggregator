@@ -40,5 +40,10 @@
   <%= @audio_story.time_stamp %>
 </p>
 
+<p>
+  <strong>In Audio Collection:</strong>
+  <%= link_to @audio_story.audio_collection.title, audio_collection_path(@audio_story.audio_collection_id) %>
+</p>
+
 <%= link_to 'Edit', edit_audio_story_path(@audio_story) %> |
 <%= link_to 'Back', audio_stories_path %>
