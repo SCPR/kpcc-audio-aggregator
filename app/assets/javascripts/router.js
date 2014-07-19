@@ -3,4 +3,5 @@
 KpccAudioAggregator.Router.map(function() {
   this.route('index', { path: '/' });
   this.resource('audio_stories');
+  this.resource('audio_collections');
 });
