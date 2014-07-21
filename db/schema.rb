@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20140718223943) do
     t.string   "url"
     t.string   "source"
     t.string   "program"
-    t.integer  "duration",            limit: 255
+    t.integer  "duration"
     t.string   "audio_url"
     t.datetime "time_stamp"
     t.datetime "created_at"
