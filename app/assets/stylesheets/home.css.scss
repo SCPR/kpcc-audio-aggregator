@@ -47,10 +47,32 @@ html, body {
 
 .collections {
   position:fixed;
-  top:129px;
+  top:103px;
   left:0;
   width:300px;
+  hr {
+    margin:4px 0;
+  }
 }
+
+  .collection-meta {
+    margin:0 10px;
+    dd, dt {
+      display:inline-block;
+    }
+    dt {
+      width:40%;
+    }
+  }
+
+  .play-all {
+    margin:0 10px 12px;
+  }
+
+  .module-nav {
+    margin-bottom:8px;
+    padding-left:10px;
+  }
 
 .right-side {
   margin-left:320px !important;
@@ -72,6 +94,9 @@ html, body {
     position: relative;
     .collections & {
       min-height:inherit;
+    }
+    .pull-right {
+      margin:13px 10px 0 0;
     }
     cite {
       @include hide-text();

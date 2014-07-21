@@ -2,19 +2,21 @@
   <div class="box box-primary">
     <div class="box-header">
       <h3 class="box-title">Audio Collections</h3>
+      <a href="#" class="pull-right">
+        <i class="fa fa-plus-circle"></i> 
+        <span>New</span>
+      </a>
     </div><!-- /.box-header -->
     <div class="box-body no-padding">
       <table class="table table-condensed">
         <tbody><tr>
-          <th style="width: 10px">#</th>
           <th>Title</th>
-          <th style="width: 40px">Duration</th>
+          <th style="width: 120px">Updated</th>
         </tr>
         {{#each audio_collection in controller.model.audioCollections}}
           <tr>
-            <td>{{audio_collection.id}}.</td>
             <td>{{audio_collection.title}}</td>
-            <td><b>05:32</b></td>
+            <td>{{format-date audio_collection.timeStamp}}</td>
           </tr>
         {{/each}}
       </tbody></table>
