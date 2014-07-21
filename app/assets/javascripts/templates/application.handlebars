@@ -61,7 +61,6 @@
 </header>
 
 <div class="wrapper">
-  
 
   {{outlet}}
   
@@ -81,6 +80,23 @@
 
         var track_title = $(this).attr('data-title');
         $('.player-title span').text(track_title);
+
+        $('.fa-play').removeClass('active');
+        $('.fa-pause').addClass('active');
+    });
+
+    $('.fa-pause').click(function(e){
+      var audio = $("#player");
+      audio[0].pause();
+      $('.fa-pause').removeClass('active');
+      $('.fa-play').addClass('active');
+    });
+
+    $('.fa-play').click(function(e){
+      var audio = $("#player");
+      audio[0].play();
+      $('.fa-play').removeClass('active');
+      $('.fa-pause').addClass('active');
     });
 
     function change_track(sourceUrl) {
