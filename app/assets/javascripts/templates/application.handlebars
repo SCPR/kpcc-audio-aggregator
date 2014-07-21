@@ -108,6 +108,12 @@
         audio[0].load();//suspends and restores all audio element
         audio[0].play();
         /****************/
+
+        // Reset UI when current audio ends.
+        audio[0].addEventListener('ended',function(){
+          $('.fa-pause').removeClass('active');
+          $('.fa-play').addClass('active');
+        });
     }
 
   });
