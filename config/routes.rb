@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :audio_stories, only: :index
-      resources :audio_collections, only: :index
+      resources :audio_collections
     end
   end
 
