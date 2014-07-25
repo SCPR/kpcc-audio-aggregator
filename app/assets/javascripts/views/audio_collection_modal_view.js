@@ -3,6 +3,3 @@
 KpccAudioAggregator.AudioCollectionModalView = Ember.View.extend({
   templateName: 'audio_collection_modal',
 });
-
-
-//KpccAudioAggregator.CollectionModalView = KpccAudioAggregator.AudioCollectionNewView.extend({});

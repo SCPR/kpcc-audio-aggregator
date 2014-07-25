@@ -13,11 +13,12 @@
           <th>Title</th>
           <th style="width: 120px">Updated</th>
         </tr>
+
         {{#each audio_collection in controller.model.audioCollections}}
-          <tr>
+          {{#link-to 'audio_collections_show' audio_collection tagName="tr" contentBinding="audio_collection" }}
             <td>{{audio_collection.title}}</td>
             <td>{{format-date audio_collection.updated_at}}</td>
-          </tr>
+          {{/link-to}}
         {{/each}}
       </tbody></table>
     </div><!-- /.box-body -->
