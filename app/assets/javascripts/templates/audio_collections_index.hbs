@@ -15,7 +15,7 @@
         </tr>
 
         {{#each audio_collection in controller.model.audioCollections}}
-          {{#link-to 'audio_collections_show' audio_collection tagName="tr" contentBinding="audio_collection" }}
+          {{#link-to 'audio_collections_show' audio_collection tagName="tr"}}
             <td>{{audio_collection.title}}</td>
             <td>{{format-date audio_collection.updated_at}}</td>
           {{/link-to}}

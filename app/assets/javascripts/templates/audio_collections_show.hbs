@@ -1,9 +1,9 @@
 <div class="collections">
   <div class="module-nav">
-    <a href="#" class="">
+    {{#link-to 'index'}}
       <i class="fa fa-chevron-left"></i> 
       <span>View All Collections</span>
-    </a>
+    {{/link-to}}
   </div>
   <div class="box box-primary">
     <div class="box-header">
@@ -18,7 +18,7 @@
       </dl>
       <dl class="collection-meta">
         <dt>Status:</dt>
-        <dd>Published</dd>
+        <dd>{{status}}</dd>
       </dl>
       <hr>
     </div><!-- /.box-header -->
@@ -77,4 +77,4 @@
   </div>
 </div>
 
-{{view 'audio_stories'}}
+{{render 'audio_stories' }}
