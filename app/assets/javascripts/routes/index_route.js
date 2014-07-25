@@ -7,17 +7,27 @@ KpccAudioAggregator.IndexRoute = Ember.Route.extend({
   },
 
   actions: {
-    openModal: function(modalName) {
-      return this.render(modalName, {
-        into: 'application',
-        outlet: 'modal'
-      });
+    createAudioCollection: function() {
+      this.controllerFor('collection.modal').send('create');
+      this.send('openModal', 'audio_collection_modal');
     },
-    closeModal: function() {
-      return this.disconnectOutlet({
-        outlet: 'modal',
-        parentView: 'application'
-      });
+
+    editAudioCollection: function(audioCollection) {
+      this.controllerFor('collection.modal').edit(audioCollection);
+      this.send('openModal', 'collection.modal');
+    },
+
+    confirmAudioCollectionDelete: function(audioCollection) {
+      this.controllerFor('confirm.delete').confirmDelete(audioCollection, 'collection.index');
+      this.send('openModal', 'confirm.delete');
+    },
+
+    saveAudioCollection: function() {
+      this.controllerFor('collection.modal').send('save');
+    },
+
+    closeAudioCollectionModal: function() {
+      this.controllerFor('collection.modal').send('close');
     }
   }
 });
