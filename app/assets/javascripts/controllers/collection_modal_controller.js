@@ -1,5 +1,4 @@
 KpccAudioAggregator.CollectionModalController = Ember.ObjectController.extend({
-  //content: Ember.Object.create(),
 
   actions: {
     create: function() {
@@ -21,7 +20,7 @@ KpccAudioAggregator.CollectionModalController = Ember.ObjectController.extend({
       transaction = model.get('transaction');
 
       if (!transaction) this.content.rollback();
-      //  if (model.get('errors')) model.set('errors', null);
+      //if (model.get('errors')) model.set('errors', null);
 
       this.send("closeModal");
     },
@@ -30,6 +29,5 @@ KpccAudioAggregator.CollectionModalController = Ember.ObjectController.extend({
       return !this.get('isDirty') || this.get('isSaving');
     }.property('isDirty', 'isSaving')
   }
-
 
 });
