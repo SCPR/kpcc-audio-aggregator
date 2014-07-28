@@ -37,41 +37,13 @@
           <th>Title</th>
           <th style="width: 40px">Duration</th>
         </tr>
-        <tr>
-          <td>1.</td>
-          <td>At Crash Site In Ukraine, Rebels Restrict International Monitors</td>
-          <td>3:45</td>
-        </tr>
-        <tr>
-          <td>2.</td>
-          <td>At Crash Site In Ukraine, Rebels Restrict International Monitors</td>
-          <td>3:45</td>
-        </tr>
-        <tr>
-          <td>3.</td>
-          <td>At Crash Site In Ukraine, Rebels Restrict International Monitors</td>
-          <td>3:45</td>
-        </tr>
-        <tr>
-          <td>4.</td>
-          <td>At Crash Site In Ukraine, Rebels Restrict International Monitors</td>
-          <td>3:45</td>
-        </tr>
-        <tr>
-          <td>5.</td>
-          <td>At Crash Site In Ukraine, Rebels Restrict International Monitors</td>
-          <td>3:45</td>
-        </tr>
-        <tr>
-          <td>6.</td>
-          <td>At Crash Site In Ukraine, Rebels Restrict International Monitors</td>
-          <td>3:45</td>
-        </tr>
-        <tr>
-          <td>7.</td>
-          <td>At Crash Site In Ukraine, Rebels Restrict International Monitors</td>
-          <td>3:45</td>
-        </tr>
+        {{#each audio_story in audio_stories}}
+          <tr>
+            <td>1.</td>
+            <td>{{audio_story.title}}</td>
+            <td>{{format-duration-seconds audio_story.duration}}</td>
+          </tr>
+        {{/each}}
       </tbody></table>
     </div><!-- /.box-body -->
   </div>
