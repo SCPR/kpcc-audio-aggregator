@@ -2,7 +2,7 @@
   <section class="content">
     <h1>Recent Audio Stories</h1>
     <div class="row">
-      {{#each article in controller.model.audioStories}}
+      {{#each article in audioStories}}
         {{view 'audio_story' contentBinding="article"}}
       {{/each}}
     </div>
