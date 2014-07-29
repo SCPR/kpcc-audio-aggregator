@@ -46,6 +46,6 @@ class Api::V1::AudioCollectionsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def audio_collection_params
-    params.require(:audio_collection).permit(:title, :status, :updated_at, :audio_stories)
+    params.require(:audio_collection).permit(:title, :status, :updated_at, :audio_story_ids, :audio_stories)
   end
 end
