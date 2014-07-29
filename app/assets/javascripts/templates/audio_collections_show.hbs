@@ -40,7 +40,7 @@
         </tr>
         {{#each audio_story in audio_stories}}
           <tr>
-            <td>1.</td>
+            <td>{{_view.contentIndex}}.</td>
             <td>{{audio_story.title}}</td>
             <td>{{format-duration-seconds audio_story.duration}}</td>
           </tr>

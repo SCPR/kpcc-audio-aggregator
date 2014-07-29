@@ -1,7 +1,6 @@
 KpccAudioAggregator.AudioCollectionsShowController = Ember.ObjectController.extend({
   content: {},
-  audioStories: {}
-    //needs: "audioStories",
-    //audioStoriesController: Ember.computed.alias("controllers.audioStories")
+  audioStories: {},
+  //totalDuration: Ember.computed.mapBy('audioStories', 'duration')
 });
-//KpccAudioAggregator.AudioStoriesController = Em.ArrayController.extend({});*/
+
