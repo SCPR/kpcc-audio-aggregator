@@ -22,7 +22,7 @@
       <p class="timestamp">Posted {{format-date article.timeStamp}}</p>
     </div><!-- /.box-body -->
     <div class="box-footer">
-        <a href="#" class="track" {{bind-attr data-audio="article.audioUrl" data-title="article.title"}}>
+        <a href="#" class="track" {{action playAudio article.audioItem}}>
           <i class="fa fa-play"></i>
           <span> Play Audio</span>
         </a>

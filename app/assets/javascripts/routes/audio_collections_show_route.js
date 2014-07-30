@@ -21,6 +21,12 @@ KpccAudioAggregator.AudioCollectionsShowRoute = Ember.Route.extend({
 
     var audio_stories = this.store.find('audio_story');
     controller.set('audioStories', audio_stories);
+  },
+
+  actions: {
+    playAudio: function(audioArray) {
+      this.controllerFor('index').send('playAudioAction', audioArray);
+    }
   }
 
 });

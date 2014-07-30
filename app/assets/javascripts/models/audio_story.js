@@ -8,7 +8,16 @@ KpccAudioAggregator.AudioStory = DS.Model.extend({
   program: DS.attr('string'),
   duration: DS.attr('number'),
   audioUrl: DS.attr('string'),
-  timeStamp: DS.attr('date')
+  timeStamp: DS.attr('date'),
+  audioItem: function() {
+    var audioUrl = this.get("audioUrl");
+    var title = this.get("title");
+
+    var ret = {};
+    ret['audioUrl'] = audioUrl;
+    ret['title'] = title;
+    return [ret];
+  }.property("audioItem")
 });
 
 KpccAudioAggregator.AudioStory.FIXTURES = [

@@ -5,17 +5,28 @@ KpccAudioAggregator.AudioCollection = DS.Model.extend({
   status: DS.attr('string'),
   updated_at: DS.attr('date'),
   audio_stories: DS.hasMany('AudioStory', { embedded: 'always', async: true } ),
+
   totalDuration: function() {
     var audioStories = this.get("audio_stories");
     var ret = 0;
     audioStories.forEach(function(audioStory){
-        console.log(audioStory.get("title"));
-        console.log(audioStory.get("duration"));
         ret += audioStory.get("duration");
     });
-    console.log(ret);
     return ret;
-  }.property("audio_stories.@each.duration")
+  }.property("audio_stories.@each.duration"),
+
+  audioArray: function() {
+    var audioStories = this.get("audio_stories");
+    var ret = [];
+    audioStories.forEach(function(audioStory){
+        audioItem = {}
+        audioItem['audioUrl'] = audioStory.get("audioUrl");
+        audioItem['title'] = audioStory.get("title");
+        ret.push(audioItem);
+    });
+    return ret;
+  }.property("audio_stories.@each.audioUrl")
+
 });
 
 
