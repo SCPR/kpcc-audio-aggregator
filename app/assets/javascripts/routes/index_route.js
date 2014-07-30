@@ -28,6 +28,10 @@ KpccAudioAggregator.IndexRoute = Ember.Route.extend({
 
     closeAudioCollectionModal: function() {
       this.controllerFor('collection.modal').send('close');
+    },
+
+    playAudio: function(audioItem) {
+      this.controllerFor('index').send('playAudioAction', audioItem);
     }
   }
 });
