@@ -6,7 +6,7 @@ KpccAudioAggregator.AudioStory = DS.Model.extend({
   url: DS.attr('string'),
   source: DS.attr('string'),
   program: DS.attr('string'),
-  duration: DS.attr('string'),
+  duration: DS.attr('number'),
   audioUrl: DS.attr('string'),
   timeStamp: DS.attr('date')
 });

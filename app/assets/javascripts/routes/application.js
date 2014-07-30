@@ -9,12 +9,12 @@ KpccAudioAggregator.Adapter = DS.RESTAdapter.reopen({
   }
 });
 
-KpccAudioAggregator.ApplicationSerializer = DS.RESTSerializer.extend({
+/*KpccAudioAggregator.ApplicationSerializer = DS.RESTSerializer.extend({
   typeForRoot: function(root) {
     var camelized = Ember.String.camelize(root);
     return Ember.String.singularize(camelized);
   }
-});
+});*/
 
 KpccAudioAggregator.ApplicationStore = DS.Store.extend({
   revision: 12,

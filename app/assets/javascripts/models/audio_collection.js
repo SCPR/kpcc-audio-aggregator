@@ -4,7 +4,18 @@ KpccAudioAggregator.AudioCollection = DS.Model.extend({
   title: DS.attr('string'),
   status: DS.attr('string'),
   updated_at: DS.attr('date'),
-  audio_stories: DS.hasMany('AudioStory', { embedded: 'always', async: true } )
+  audio_stories: DS.hasMany('AudioStory', { embedded: 'always', async: true } ),
+  totalDuration: function() {
+    var audioStories = this.get("audio_stories");
+    var ret = 0;
+    audioStories.forEach(function(audioStory){
+        console.log(audioStory.get("title"));
+        console.log(audioStory.get("duration"));
+        ret += audioStory.get("duration");
+    });
+    console.log(ret);
+    return ret;
+  }.property("audio_stories.@each.duration")
 });
 
 
