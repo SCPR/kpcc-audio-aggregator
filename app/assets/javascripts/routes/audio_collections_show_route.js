@@ -26,6 +26,20 @@ KpccAudioAggregator.AudioCollectionsShowRoute = Ember.Route.extend({
   actions: {
     playAudio: function(audioArray) {
       this.controllerFor('index').send('playAudioAction', audioArray);
+    },
+
+    editCollection: function(audioCollection) {
+      console.log("edit collection");
+      this.controllerFor('collection.modal').send('edit', audioCollection);
+      this.send('openModal', 'audio_collection_modal');
+    },
+
+    closeAudioCollectionModal: function() {
+      this.controllerFor('collection.modal').send('close');
+    },
+
+    saveAudioCollection: function() {
+      this.controllerFor('collection.modal').send('save');
     }
   }
 
