@@ -29,7 +29,6 @@ KpccAudioAggregator.AudioCollectionsShowRoute = Ember.Route.extend({
     },
 
     editCollection: function(audioCollection) {
-      console.log("edit collection");
       this.controllerFor('collection.modal').send('edit', audioCollection);
       this.send('openModal', 'audio_collection_modal');
     },

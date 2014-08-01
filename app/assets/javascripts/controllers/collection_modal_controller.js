@@ -11,14 +11,19 @@ KpccAudioAggregator.CollectionModalController = Ember.ObjectController.extend({
       this.set('model', audioCollection);
     },
 
-    edit: function(record) {
-      console.log("EDIT!");
+    edit: function(modelId) {
+      var self = this;
+      var audioCollection = self.store.find('audio_collection', modelId);
 
-      //record.one('didUpdate', this, function() {
-      //  this.send('close');
-      //});
+      audioCollection.then(function(record){
+        self.set('model', record);
 
-      //this.set('model', record);
+        record.on('didUpdate', function() {
+          self.send('close');
+        });
+      }, function() {
+        console.log("promise failed");
+      });
     },
 
     save: function() {
@@ -26,11 +31,14 @@ KpccAudioAggregator.CollectionModalController = Ember.ObjectController.extend({
     },
 
     close: function() {
-      if (this.get('model')) {
-        var model = this.get('model'),
-        transaction = model.get('transaction');
+      var model = this.get('model');
 
-        if (!transaction) this.content.rollback();
+      if (model) {
+        var transaction = model.get('transaction');
+
+        if (!transaction) {
+            this.content.rollback();
+        }
         //if (model.get('errors')) model.set('errors', null);
       }
 
