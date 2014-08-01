@@ -3,8 +3,7 @@ KpccAudioAggregator.ApplicationRoute = Em.Route.extend({
     openModal: function(modalName) {
       return this.render(modalName, {
         into: 'application',
-        outlet: 'modal',
-        //controller: this.controllerFor('collection.modal')
+        outlet: 'modal'
       });
     },
 

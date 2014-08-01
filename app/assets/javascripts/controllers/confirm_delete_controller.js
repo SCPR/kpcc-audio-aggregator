@@ -1,20 +1,13 @@
 KpccAudioAggregator.ConfirmDeleteController = Ember.ObjectController.extend({
   confirmDelete: function(model, afterDeleteRoute) {
-    console.log('confirmDelete in ConfirmDeleteController to transition to: ' + afterDeleteRoute);
-    console.log('confirmDelete in ConfirmDeleteController model: ' + model);
     this.set('model', model);
     this.set('afterDeleteRoute', afterDeleteRoute);
   },
 
   actions: {
     confirm: function() {
-      console.log("confirm in ConfirmDeleteController");
-
       var model = this.get('model'),
-      after = this.get('afterDeleteRoute');
-
-      console.log("CONFIRM:  " + model);
-      console.log("AFTER:  " + after);
+          after = this.get('afterDeleteRoute');
 
       model.on('didDelete', this, function() {
         this.send('close');
@@ -24,7 +17,6 @@ KpccAudioAggregator.ConfirmDeleteController = Ember.ObjectController.extend({
 
       model.deleteRecord();
       model.save();
-      //model.get('transaction').commit();
     },
 
     close: function() {

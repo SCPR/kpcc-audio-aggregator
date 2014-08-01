@@ -1,7 +1,7 @@
 class Api::V1::AudioCollectionsController < ApplicationController
   respond_to :json
-  skip_before_filter :verify_authenticity_token, :only => [:create, :update]
-  before_action :set_audio_collection, only: [:update, :show]
+  skip_before_filter :verify_authenticity_token, :only => [:create, :update, :destroy]
+  before_action :set_audio_collection, only: [:update, :show, :destroy]
 
   # GET /api/v1/audio_collections
   # GET /api/v1/audio_collections.json
@@ -35,6 +35,16 @@ class Api::V1::AudioCollectionsController < ApplicationController
         format.html { render text: @audio_collection.errors.to_json }
         format.json { render json: @audio_collection.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  # DELETE /audio_collections/1
+  # DELETE /audio_collections/1.json
+  def destroy
+    @audio_collection.destroy
+    respond_to do |format|
+      format.html { redirect_to audio_collections_url, notice: 'Audio collection was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 
