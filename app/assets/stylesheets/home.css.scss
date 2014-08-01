@@ -135,6 +135,13 @@ html, body {
 
     .box-footer {
       @include clearfix();
+      .add {
+        border-right: 1px solid #eee;
+        padding-right: 1px;
+      }
+      .track {
+        padding-left: 7px;
+      }
       b {
         float:right;
       }

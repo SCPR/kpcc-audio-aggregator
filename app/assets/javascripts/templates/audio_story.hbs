@@ -22,6 +22,13 @@
       <p class="timestamp">Posted {{format-date article.timeStamp}}</p>
     </div><!-- /.box-body -->
     <div class="box-footer">
+        {{#if inCollection}}
+          <a href="#" class="add">
+            <i class="fa fa-plus"></i>
+            <span>Add to Collection</span>
+          </a>
+        {{/if}}
+
         <a href="#" class="track" {{action playAudio article.audioItem}}>
           <i class="fa fa-play"></i>
           <span> Play Audio</span>

@@ -1,5 +1,8 @@
 KpccAudioAggregator.AudioCollectionsShowController = Ember.ObjectController.extend({
   content: {},
-  audioStories: {}
+  audioStories: {},
+  inCollection: (function(){
+    return true;
+  }).property()
 });
 
