@@ -30,7 +30,7 @@ KpccAudioAggregator.AudioCollectionsShowRoute = Ember.Route.extend({
 
     editCollection: function(audioCollection) {
       this.controllerFor('collection.modal').send('edit', audioCollection);
-      this.send('openModal', 'audio_collection_modal');
+      this.send('openModal', 'collection.modal');
     },
 
     closeAudioCollectionModal: function() {
@@ -39,6 +39,24 @@ KpccAudioAggregator.AudioCollectionsShowRoute = Ember.Route.extend({
 
     saveAudioCollection: function() {
       this.controllerFor('collection.modal').send('save');
+    },
+
+    confirmDelete: function(audioCollection) {
+      console.log("confirming delete: " + audioCollection);
+      var defer = Ember.RSVP.defer(),
+      self = this;
+
+      defer.promise.then(function(){
+        console.log("deferred promise");
+        self.controllerFor('confirm.delete').confirmDelete(audioCollection, 'index');
+        self.send('openModal', 'confirm.delete');
+      },
+      function(){
+        alert('error');
+      });
+
+      this.send('closeModal', defer);
+      
     }
   }
 

@@ -9,7 +9,7 @@ KpccAudioAggregator.IndexRoute = Ember.Route.extend({
   actions: {
     createAudioCollection: function() {
       this.controllerFor('collection.modal').send('create');
-      this.send('openModal', 'audio_collection_modal');
+      this.send('openModal', 'collection.modal');
     },
 
     editAudioCollection: function(audioCollection) {
@@ -17,10 +17,10 @@ KpccAudioAggregator.IndexRoute = Ember.Route.extend({
       this.send('openModal', 'collection.modal');
     },
 
-    confirmAudioCollectionDelete: function(audioCollection) {
+    /*confirmAudioCollectionDelete: function(audioCollection) {
       this.controllerFor('confirm.delete').confirmDelete(audioCollection, 'collection.index');
       this.send('openModal', 'confirm.delete');
-    },
+    },*/
 
     saveAudioCollection: function() {
       this.controllerFor('collection.modal').send('save');
