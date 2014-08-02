@@ -22,7 +22,9 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-danger pull-left" {{action confirmDelete this}}>Delete</button>
+          {{#unless isNew}}
+            <button class="btn btn-danger pull-left" {{action confirmDelete this}}>Delete</button>
+          {{/unless}}
           <button type="submit" class="btn btn-primary" {{bind-attr disabled="shouldDisableSubmit"}}>Save</button>
         </div>
       </form>
