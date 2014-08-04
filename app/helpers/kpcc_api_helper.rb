@@ -19,7 +19,7 @@ module KpccApiHelper
 
   class Articles
     include HTTParty
-    @base_uri = "http://scpr.org/api/v3/articles"
+    @base_uri = "http://scpr.org/api/v3/articles?limit=20"
 
     def self.last_24_hours
       self.get(@base_uri)

@@ -13,30 +13,26 @@ KpccAudioAggregator.AudioCollectionsShowController = Ember.ObjectController.exte
       var self = this;
 
       var audioCollection = self.store.find('audio_collection', audioCollectionId);
+      console.log("audioCollection: "+ audioCollection);
 
-      audioCollection.then(function(record){
-        var audioStories = record.get("audio_stories");
-        console.log("audioStories? " + audioStories);
+      audioCollection.then(function(audio_collection_record){
+        console.log("record? " + audio_collection_record);
+        console.log("audioStories? " + audio_collection_record.get("audio_stories"));
 
-        audioStories.then(function(){
-            audioStories.pushObject(audioStory);
-            //record.save();
-            self.set('model', record);
-            //this.content.save();
-            //record.save();
-        });
+        /*audio_collection_record.get("audio_stories").then(function(audio_stories_record){
+            audio_stories_record.pushObject(audioStory);
+            //audio_stories_record.save();
+            //audio_collection_record.save();
+        });*/
+        audio_collection_record.get("audio_stories").pushObject(audioStory);
+        //audioStory.destroy();
 
+        audio_collection_record.save();
 
-        
-
-        //record
-
-        //record.on('didUpdate', function() {
-        //  self.send('close');
-        //});
       }, function() {
         console.log("promise failed");
       });
+
     }
   }
 });

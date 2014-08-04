@@ -9,6 +9,7 @@ KpccAudioAggregator.AudioStory = DS.Model.extend({
   duration: DS.attr('number'),
   audioUrl: DS.attr('string'),
   timeStamp: DS.attr('date'),
+  audio_collections: DS.hasMany('AudioCollection'),
   audioItem: function() {
     var audioUrl = this.get("audioUrl");
     var title = this.get("title");
