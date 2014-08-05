@@ -24,10 +24,18 @@ KpccAudioAggregator.AudioCollectionsShowController = Ember.ObjectController.exte
             //audio_stories_record.save();
             //audio_collection_record.save();
         });*/
+
+        /**
+         * TODO: Saving embedded objects via Ember is *working* but not as intended.
+         * Need to fix the duplication issues that are caused here. Watch for changes
+         * to ember-data. This is a somewhat common issue and they are working towards
+         * a fix (we hope).
+         */
         audio_collection_record.get("audio_stories").pushObject(audioStory);
         //audioStory.destroy();
 
         audio_collection_record.save();
+        //audio_collection_record.reload();
 
       }, function() {
         console.log("promise failed");
