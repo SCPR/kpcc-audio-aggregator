@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @audio_story.category %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @audio_story.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @audio_story.url %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @audio_story.source %>
+</p>
+
+<p>
+  <strong>Program:</strong>
+  <%= @audio_story.program %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @audio_story.duration %>
+</p>
+
+<p>
+  <strong>Audio url:</strong>
+  <%= @audio_story.audio_url %>
+</p>
+
+<p>
+  <strong>Time stamp:</strong>
+  <%= @audio_story.time_stamp %>
+</p>
+
+<%= link_to 'Edit', edit_audio_story_path(@audio_story) %> |
+<%= link_to 'Back', audio_stories_path %>

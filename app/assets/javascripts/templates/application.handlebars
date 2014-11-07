@@ -1,0 +1,89 @@
+<!-- Navbar -->
+<header class="header">
+  <nav class="navbar navbar-default navbar-static-top navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        {{#link-to 'index' class="navbar-brand"}}
+            <div class="logo-KPCC"></div>
+            <span>Audio Aggregator</span>
+        {{/link-to}}
+        
+      </div>
+
+      <div class="audio-player pull-left">
+        <i class="fa fa-play active"></i>
+        <i class="fa fa-pause"></i>
+        <span class="player-title">
+            <b>Now Playing:</b>
+            <span></span>
+        </span>
+        <audio id="player" controls="controls">
+          <source id="mp3_src" src="" type="audio/mp3" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+    
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown user user-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="glyphicon glyphicon-user"></i>
+                  <span>Jane Doe <i class="caret"></i></span>
+              </a>
+              <ul class="dropdown-menu">
+                  <!-- User image -->
+                  <li class="user-header bg-light-blue">
+                      <p>
+                          Jane Doe - Web Developer
+                          <small>Member since Nov. 2012</small>
+                      </p>
+                  </li>
+                  <!-- Menu Footer-->
+                  <li class="user-footer">
+                      <div class="pull-left">
+                          <a href="#" class="btn btn-default btn-flat">Profile</a>
+                      </div>
+                      <div class="pull-right">
+                          <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                      </div>
+                  </li>
+              </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+
+    </div>
+  </nav>
+</header>
+
+<div class="wrapper">
+
+  {{outlet}}
+  {{outlet modal}}
+  
+</div>
+
+
+<script>
+  $(function() {
+
+    $('.fa-pause').click(function(e){
+      var audio = $("#player");
+      audio[0].pause();
+      $('.fa-pause').removeClass('active');
+      $('.fa-play').addClass('active');
+    });
+
+    $('.fa-play').click(function(e){
+      var audio = $("#player");
+      audio[0].play();
+      $('.fa-play').removeClass('active');
+      $('.fa-pause').addClass('active');
+    });
+
+  });
+</script>

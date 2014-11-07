@@ -1,0 +1,26 @@
+<div class="collections">
+  <div class="box box-primary">
+    <div class="box-header">
+      <h3 class="box-title">Audio Collections</h3>
+      <a {{action createAudioCollection}} class="new-collection pull-right">
+        <i class="fa fa-plus-circle"></i> 
+        <span>New</span>
+      </a>
+    </div><!-- /.box-header -->
+    <div class="box-body no-padding">
+      <table class="table table-condensed">
+        <tbody><tr>
+          <th>Title</th>
+          <th style="width: 120px">Updated</th>
+        </tr>
+
+        {{#each audio_collection in controller.model.audioCollections}}
+          {{#link-to 'audio_collections_show' audio_collection tagName="tr"}}
+            <td>{{audio_collection.title}}</td>
+            <td>{{format-date audio_collection.updated_at}}</td>
+          {{/link-to}}
+        {{/each}}
+      </tbody></table>
+    </div><!-- /.box-body -->
+  </div>
+</div>

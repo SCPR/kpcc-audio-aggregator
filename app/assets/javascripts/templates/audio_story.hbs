@@ -1,0 +1,39 @@
+<div class="col-md-4">
+  <!-- Default box -->
+  <div class="box">
+    <div class="box-header">
+      <cite {{bind-attr class="article.source"}}>{{article.source}}</cite>
+      <h2 class="box-title">
+        {{article.title}}
+        <a {{bind-attr href="article.url"}} target="new"><i class="fa fa-external-link"></i></a>
+      </h2>
+      {{#unboundIf article.category}}
+      <div class="box-tools">
+        <div class="text-light-muted">{{article.category}}</div>
+      </div>
+      {{/unboundIf}}
+      {{#unboundIf article.program}}
+      <div class="box-tools">
+        <div class="text-light-muted">{{article.program}}</div>
+      </div>
+      {{/unboundIf}}
+    </div>
+    <div class="box-body">
+      <p class="timestamp">Posted {{format-date article.timeStamp}}</p>
+    </div><!-- /.box-body -->
+    <div class="box-footer">
+        {{#if inCollection}}
+          <a href="#" class="add" {{action addToCollection article this.id}} >
+            <i class="fa fa-plus"></i>
+            <span>Add to Collection</span>
+          </a>
+        {{/if}}
+
+        <a href="#" class="track" {{action playAudio article.audioItem}}>
+          <i class="fa fa-play"></i>
+          <span> Play Audio</span>
+        </a>
+        <b class="duration">{{format-duration-seconds article.duration}}</b>
+    </div><!-- /.box-footer-->
+  </div><!-- /.box -->
+</div>
